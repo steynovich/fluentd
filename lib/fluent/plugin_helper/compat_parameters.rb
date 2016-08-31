@@ -48,14 +48,21 @@ module Fluent
 
       PARSER_PARAMS = {
         "format" => "@type",
+        "keys"        => "keys",
         "time_key"    => "time_key",
         "time_format" => "time_format",
         "delimiter"   => "delimiter",
+        "keep_time_key" => "keep_time_key",
+        "null_empty_string" => "null_empty_string", # ValuesParser
+        "null_value_pattern" => "null_value_pattern", # ValuesParser
         "json_parser"      => "json_parser", # JSONParser
         "label_delimiter"  => "label_delimiter", # LabeledTSVParser
         "format_firstline" => "format_firstline", # MultilineParser
         "message_key"      => "message_key", # NoneParser
         "with_priority"    => "with_priority", # SyslogParser
+        "types" => "types", # TypeConverter
+        "types_delimiter" => "types_delimiter", # TypeConverter
+        "types_label_delimiter" => "types_label_delimiter", # TypeConverter
       }
 
       INJECT_PARAMS = {
