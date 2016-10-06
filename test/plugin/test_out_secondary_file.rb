@@ -166,7 +166,8 @@ class FileOutputSecondaryTest < Test::Unit::TestCase
         sleep 0.1 until File.stat(path).size == msgpack_binary.size
       end
 
-      assert_equal File.read(path), msgpack_binary
+      filesize = File.size(path)
+      assert_equal msgpack_binary, File.read(path), "File content mismatch, expected size:#{msgpack_binary.bytesize}, actual:#{filesize}"
     end
 
     test 'path should be incremental when append option is false' do
